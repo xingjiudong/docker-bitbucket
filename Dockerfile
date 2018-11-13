@@ -14,7 +14,7 @@ ENV TEMPLATES_VERSION=2.0.3 \
     WORKZONE_VERSION=4.2.4 \
     YACC_VERSION=1.11 
 
-ENV DOWNLOAD_URL= https://marketplace-cdn.atlassian.com/files/artifact
+ENV DOWNLOAD_URL=https://marketplace-cdn.atlassian.com/files/artifact
 
 RUN set -x && mkdir /plugins && \
     curl -sLo /plugins/templates-${TEMPLATES_VERSION}.jar                              ${DOWNLOAD_URL}/06d269df-6cdb-4f09-bf37-ba8f1020435f/templates-${TEMPLATES_VERSION}.jar && \
