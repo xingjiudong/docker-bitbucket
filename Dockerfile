@@ -28,3 +28,5 @@ RUN set -x && mkdir /plugins && \
     curl -sLo /plugins/stash-webhook-jenkins-${STASH_WEBHOOH_JENKINS_VERSION}.jar      ${DOWNLOAD_URL}/36da8ee6-88e2-441c-9d66-36870a81fe20/stash-webhook-jenkins-${STASH_WEBHOOH_JENKINS_VERSION}.jar && \
     curl -sLo /plugins/workzone-${WORKZONE_VERSION}.jar                                ${DOWNLOAD_URL}/d4a90566-5d39-49bb-b2cb-fd5e39836fb3/workzone-${WORKZONE_VERSION}.jar && \
     curl -sLo /plugins/yacc-${YACC_VERSION}.jar                                        ${DOWNLOAD_URL}/aa2bd0e3-00f2-4ac5-a190-9a8f85530e04/yacc-${YACC_VERSION}.jar
+
+RUN scp /plugins/* /opt/atlassian/bitbucket/app/WEB-INF/atlassian-bundled-plugins/
