@@ -5,14 +5,14 @@ MAINTAINER "xing.jiudong@trans-cosmos.com.cn"
 ENV TEMPLATES_VERSION=2.0.3 \
     BRANCH_AUTHOR_VERSION=2.1.0 \
     PARAMETERIZED_BUILDS_VERSION=2.3.0 \
-    PULL_REQUEST_VERSION=2.21 \
+    PULL_REQUEST_VERSION=3.1 \
     RIGHTREPO_VERSION=1.0.6 \
     SONAR4STASH_VERSION=1.7.0 \
     STASH_ALL_VERSION=1.6 \
     STASH_REMINDERS_VERSION=2.0.2 \
     STASH_WEBHOOH_JENKINS_VERSION=3.0.1 \
-    WORKZONE_VERSION=4.2.4 \
-    YACC_VERSION=1.11 
+    WORKZONE_VERSION=5.0.1 \
+    YACC_VERSION=1.16
 
 ENV DOWNLOAD_URL=https://marketplace-cdn.atlassian.com/files/artifact \
     PLUGIN_PATH=/opt/atlassian/bitbucket/app/WEB-INF/atlassian-bundled-plugins
