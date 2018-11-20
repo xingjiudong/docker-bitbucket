@@ -18,7 +18,7 @@ ENV TEMPLATES_VERSION=2.0.3 \
     YACC_RAN=631635c6-ee24-413b-a189-10cdf2026060
 
 ENV DOWNLOAD_URL=https://marketplace-cdn.atlassian.com/files/artifact \
-    PLUGIN_PATH=/opt/atlassian/bitbucket/app/WEB-INF/atlassian-bundled-plugins
+    PLUGIN_PATH=${BITBUCKET_HOME}shared/plugins/installed-plugins
 
 RUN set -x && \
     curl -sLo ${PLUGIN_PATH}/templates-${TEMPLATES_VERSION}.jar                              ${DOWNLOAD_URL}/06d269df-6cdb-4f09-bf37-ba8f1020435f/templates-${TEMPLATES_VERSION}.jar && \
