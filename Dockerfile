@@ -2,6 +2,19 @@ FROM atlassian/bitbucket-server:5.12.2
 
 MAINTAINER "xing.jiudong@trans-cosmos.com.cn"
 
+# update openjdk
+RUN set -x \
+        && apk del openjdk8
+
+ENV JAVA_VERSION 8u181
+ENV JAVA_ALPINE_VERSION 8.181.13-r0
+
+RUN set -x \
+        && apk add --no-cache \
+                openjdk8="$JAVA_ALPINE_VERSION" \
+        && [ "$JAVA_HOME" = "$(docker-java-home)" ]
+
+# install plugins
 ENV TEMPLATES_VERSION=2.0.3 \
     BRANCH_AUTHOR_VERSION=2.1.0 \
     PARAMETERIZED_BUILDS_VERSION=2.3.0 \
@@ -18,7 +31,7 @@ ENV TEMPLATES_VERSION=2.0.3 \
     YACC_RAN=631635c6-ee24-413b-a189-10cdf2026060
 
 ENV DOWNLOAD_URL=https://marketplace-cdn.atlassian.com/files/artifact \
-    PLUGIN_PATH=${BITBUCKET_HOME}shared/plugins/installed-plugins
+    PLUGIN_PATH=/opt/atlassian/bitbucket/app/WEB-INF/atlassian-bundled-plugins
 
 RUN set -x && \
     curl -sLo ${PLUGIN_PATH}/templates-${TEMPLATES_VERSION}.jar                              ${DOWNLOAD_URL}/06d269df-6cdb-4f09-bf37-ba8f1020435f/templates-${TEMPLATES_VERSION}.jar && \
